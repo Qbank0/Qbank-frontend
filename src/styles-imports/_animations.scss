@@ -1,0 +1,58 @@
+$animationDuration: 150ms;
+$animationDurationMs: 150;
+$animationDurationLong: 400ms;
+$animationDurationLongMs: 400;
+$animationDurationLonger: 700ms;
+$animationDurationLongerMs: 700;
+$animationFunction: ease;
+
+@mixin transition($properties...) {
+  $transition: ();
+
+  @each $property in $properties {
+    $transition: append($transition, $property $animationDuration $animationFunction, comma);
+  }
+
+  transition: $transition;
+}
+
+@mixin transitionLong($properties...) {
+  $transition: ();
+
+  @each $property in $properties {
+    $transition: append($transition, $property $animationDurationLong $animationFunction, comma);
+  }
+
+  transition: $transition;
+}
+
+@mixin transitionLonger($properties...) {
+  $transition: ();
+
+  @each $property in $properties {
+    $transition: append($transition, $property $animationDurationLonger $animationFunction, comma);
+  }
+
+  transition: $transition;
+}
+
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

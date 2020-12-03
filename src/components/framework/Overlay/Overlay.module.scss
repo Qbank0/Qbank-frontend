@@ -1,0 +1,54 @@
+@import 'shared.scss';
+
+/* OVERLAY */
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: rgba(27, 30, 56, 0.8);
+  backdrop-filter: blur(16px);
+
+  animation: fadeIn 300ms ease;
+  animation-fill-mode: forwards;
+
+  z-index:4;
+
+  /* CHILDREN */
+
+  .content {
+
+    box-sizing: border-box;
+    width: 380px;
+    padding: 36px;
+
+    border-radius: $borderRadiusL;
+    background: linear-gradient(106.12deg, #303252 0%, #252848 101.19%);
+
+    .text {
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      margin-top: $spaceM;
+      display: flex;
+      > * {
+        flex-grow: 1;
+
+        &:first-child {
+          margin-right: $spaceM;
+        }
+      }
+    }
+  }
+
+  /* INTERACTION */
+
+  /* MODIFIERS */
+}

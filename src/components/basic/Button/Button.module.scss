@@ -1,0 +1,79 @@
+@import 'shared.scss';
+
+/* BUTTON */
+.button {
+  cursor: pointer;
+
+  box-sizing: border-box;
+  height: 40px;
+  max-width: 150px;
+  padding: 8px $spaceL;
+  // ellipsis
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  border: 0;
+
+  font-family: 'Abel', sans-serif;
+  @include typeXs;
+  color: $colorGrey2;
+
+  border-radius: $borderRadius;
+
+  background-color: rgba(134, 164, 182, 0.1);
+
+  @include transition(background-color, color);
+
+  /* CHILDREN */
+
+  /* INTERACTION */
+
+  &:hover {
+    color: $colorWhite;
+    background-color: rgba(134, 164, 182, 0.2);;
+  }
+
+
+  /* MODIFIERS */
+  &.fullWidth {
+    width: 100%;
+    max-width: 100%;
+  }
+  &.bold {
+    font-weight: bold;
+  }
+  &.primary {
+    color: $colorDark;
+    border-width: 0px;
+    width: 150px;
+    background: $gradientHighlight;
+
+    &:hover {
+      // @include transition(opacity);
+      // opacity: 0.85;
+      background: $gradientHighlight2;
+    }
+  }
+  &.secondary {
+    // same as default
+    color: $colorPrimary1;
+
+    border: 1px solid $colorPrimary1;
+    background-color: rgba(0,0,0,0);
+
+    &:hover {
+      background-color: $colorPrimary2;
+    }
+  }
+  &.tertiary {
+    color: $colorPrimary1;
+    border-width: 0px;
+    padding: $spaceXs $spaceS;
+    background-color: $colorPrimary3;
+
+    &:hover {
+      background-color: $colorPrimary2;
+    }
+  }
+}

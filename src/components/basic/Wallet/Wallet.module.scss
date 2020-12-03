@@ -1,0 +1,230 @@
+@import 'shared.scss';
+
+/* WALLET */
+.wallet {
+
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+
+  border-radius: $borderRadiusL;
+
+  background: linear-gradient(106.12deg, #303252 0%, #252848 101.19%);
+  box-shadow: $boxShadow;
+
+  /* CHILDREN */
+  .empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    position: relative;
+    box-sizing: border-box;
+    height: 520px;
+
+    box-sizing:border-box;
+    padding-top: 83px;
+    padding-bottom: 133px;
+    width: 100%;
+
+    @include transitionLong(opacity, transform);
+    transition-delay: 300ms;
+
+    > * {
+      width: 100%;
+      text-align: center;
+    }
+
+    .image {
+      width: 186px !important;
+    }
+    .title {
+      margin-top: 20px;
+      @include typeXl;
+      justify-content: center;
+    }
+    .subtitle {
+      margin-top: 11px;
+      @include typeL;
+      color: $colorGrey3;
+    }
+  }
+  .hidden {
+    opacity: 0;
+    position: absolute;
+  }
+
+  // DATA
+  .data {
+    animation: fadeIn 300ms ease;
+    animation-delay: 600ms;
+    animation-fill-mode: forwards;
+
+    padding: 0;
+    width: 100%;
+
+    opacity: 0;
+  }
+  .row {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    box-sizing:border-box;
+    height: 96px;
+    padding: 0 32px;
+    width: 100%;
+
+    border-bottom: 1px solid $colorGrey1;
+
+    @include transitionLong(background-color);
+
+    &:first-child {
+      border-top-left-radius: $borderRadiusL;
+      border-top-right-radius: $borderRadiusL;
+    }
+    &:last-child {
+      border-bottom-left-radius: $borderRadiusL;
+      border-bottom-right-radius: $borderRadiusL;
+      border: 0px;
+    }
+
+    &:hover {
+      background-color: $colorGrey1;
+      .toggleArrow {
+        background-color: $colorPrimary2;
+      }
+    }
+    &.active {
+      border-color: transparent;
+
+      .toggleArrow {
+        transform: rotate(90deg);
+      }
+    }
+  }
+  // COLUMNS
+  .row > div {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .logo {
+    flex-basis: 48px;
+    margin-right: $spaceL;
+  }
+  .col1 {
+
+  }
+  .col2 {
+    flex-grow: 1;
+    justify-content: center;
+
+    .subtitle {
+      text-align: center;
+    }
+  }
+  .col3 {
+    flex-basis: 80px;
+    justify-content: flex-end;
+    margin-right: 50px;
+
+    .subtitle {
+      text-align: end;
+    }
+  }
+  .toggleArrow {
+    flex-basis: 32px;
+    justify-self: flex-end;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    height: 32px;
+    padding-left: 2px;
+    border-radius: 50%;
+    background-color: $colorPrimary3;
+
+    @include transitionLong(background-color, transform);
+  }
+  // ITEM DATA
+  .title {
+    @include typeL;
+  }
+  .subtitle {
+    margin-top: 4px;
+    width: 100%;
+
+    @include typeXs;
+    color: $colorGrey3;
+  }
+  .interestRate {
+    @include typeL;
+  }
+  .interestRateQash {
+    margin-left: 8px;
+    margin-bottom: 2px;
+    align-self: flex-end;
+    @include typeXs;
+  }
+  .currency {
+    margin-left: 5px;
+  }
+
+  .rowContent {
+    display: flex;
+
+    box-sizing: border-box;
+    width: 100%;
+    padding: $spaceM 32px+75px 32px 32px+72px;
+
+    border-bottom: 1px solid $colorGrey1;
+
+    animation: fadeIn 600ms ease;
+
+    .left, .right {
+      box-sizing: border-box;
+      width: 50%;
+      height: 100%;
+    }
+    .left {
+      padding-right: 39px;
+    }
+    .right {
+      padding-left: 39px;
+    }
+
+    .contentRow {
+      display: flex;
+      margin-bottom: 16px;
+
+      @include typeS;
+
+      [class*=tertiary] {
+        flex-grow: 1;
+
+        margin-right: 19px;
+        &:last-child {
+          margin-right: 0px
+        }
+      }
+
+      &:first-child {
+        @include typeXs;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+
+
+  /* INTERACTION */
+
+  /* MODIFIERS */
+}

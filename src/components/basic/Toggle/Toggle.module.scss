@@ -1,0 +1,94 @@
+@import 'shared.scss';
+
+$height: 20px;
+$width: 36px;
+$switchXY: 14px;
+
+/* TOGGLE */
+.toggle {
+
+  position: relative;
+  width: $width;
+  user-select: none;
+
+  &.checked {
+    .label {
+      background-color: $colorPrimary1;
+    }
+  }
+
+  .checkbox {
+    display: none;
+  }
+  .label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 0 solid #bbb;
+    border-radius: 20px;
+    margin: 0;
+    background-color: $colorDark;
+
+    @include transition(background-color);
+  }
+  .inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+
+    @include transition(margin);
+    &:before,
+    &:after {
+      display: block;
+      content: " ";
+      float: left;
+      width: 50%;
+      height: $height;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    &:before {
+      content: " ";
+      padding-left: 10px;
+    }
+  }
+  [disabled] {
+    background-color: #ddd;
+    cursor: not-allowed;
+    &:before {
+      background-color: #ddd;
+      cursor: not-allowed;
+    }
+  }
+  .inner:after {
+    padding-right: 10px;
+  }
+  .switch {
+    display: block;
+    width: $switchXY;
+    height: $switchXY;
+    margin: 3px;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-left: 3px;
+    border: 0 solid #bbb;
+    border-radius: 50%;
+    @include transition(transform);
+  }
+  .checkbox:checked + .label {
+    .inner {
+      margin-left: 0;
+    }
+    .switch {
+      transform: translateX(16px);
+    }
+  }
+
+  /* CHILDREN */
+
+  /* INTERACTION */
+
+  /* MODIFIERS */
+}

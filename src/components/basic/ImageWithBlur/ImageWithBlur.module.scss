@@ -1,0 +1,29 @@
+@import 'shared.scss';
+
+/* IMAGEWITHBLUR */
+.imageWithBlur {
+  position: relative;
+  width: 100%;
+
+  /* CHILDREN */
+  .image, .imageBlur {
+    position: relative;
+
+    display: block;
+    width: 100%;
+    margin-right: $spaceXs;
+    z-index: 1;
+  }
+  .imageBlur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: blur(16px);
+    opacity: 0.6;
+    z-index: 0;
+  }
+
+  /* INTERACTION */
+
+  /* MODIFIERS */
+}

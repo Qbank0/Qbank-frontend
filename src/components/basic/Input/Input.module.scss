@@ -1,0 +1,34 @@
+@import 'shared.scss';
+
+/* INPUT */
+.input {
+  display: block;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  padding: 10px 17px;
+
+  @include typeS;
+  color: $colorWhite;
+
+  background-color: transparent;
+  border: 1px solid $colorGrey2;
+  border-radius: $borderRadius;
+
+  @include transition(background-color);
+
+  &:focus {
+    background-color: $colorPrimary2;
+    outline: none;
+  }
+  &::placeholder, &::-webkit-input-placeholder {
+    color: $colorWhite;
+  }
+
+  /* CHILDREN */
+
+  /* INTERACTION */
+
+  /* MODIFIERS */
+}

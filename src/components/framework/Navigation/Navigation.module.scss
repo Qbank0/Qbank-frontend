@@ -1,0 +1,74 @@
+@import 'shared.scss';
+
+/* NAVIGATION */
+.navigation {
+
+  box-sizing: border-box;
+  width: 360px;
+  height: calc(100vh - #{$headerHeight});
+  padding-top: $spaceXxl;
+
+  border-right: 1px solid $colorGrey1;
+
+  /* CHILDREN */
+
+  // TITLE
+  .title {
+    @include typeXl;
+  }
+
+  // LIST
+  .list {
+    margin:0;
+    margin-top: 20px;
+    padding: 0;
+    @include typeL;
+  }
+
+  .list li {
+    // reset
+    text-indent: 0;
+    list-style-type: none;
+
+    position: relative;
+    cursor: pointer;
+    color: $colorGrey3;
+    padding: 20px 50px;
+
+    @include transition(color);
+
+    &:hover {
+      color: $colorGrey2;
+    }
+
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+    &::after {
+      position: absolute;
+      content: " ";
+      display: block;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(270deg, #333851 36.27%, rgba(51, 56, 81, 0) 100%);
+
+      ;
+    }
+  }
+
+  .list li.highlight {
+    color: $colorSecondary1;
+
+    &:hover {
+      color: $colorSecondary2;
+    }
+  }
+
+  /* INTERACTION */
+
+  /* MODIFIERS */
+}

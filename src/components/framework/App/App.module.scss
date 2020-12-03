@@ -1,0 +1,52 @@
+@import 'shared.scss';
+
+.app {
+}
+
+.layout {
+  position: relative;
+
+  display: flex;
+  width: $pageWidth;
+  margin: auto;
+
+}
+
+.main {
+  position: relative;
+
+  box-sizing: border-box;
+  padding: 40px 53px;
+  padding-right: 0px;
+  flex-grow: 1;
+  flex-basis: 863px;
+  height: calc(100vh - #{$headerHeight});
+
+  overflow-y: auto;
+
+  .title {
+    @include typeXl;
+    margin-bottom: $spaceL;
+  }
+
+}
+
+
+.emptyArrowContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.emptyArrow {
+  pointer-events: none;
+
+  position: absolute;
+  right: -190px;
+  top: 30px;
+
+  @include transitionLonger(opacity);
+}
+.hidden {
+  opacity: 0;
+  position: absolute;
+}

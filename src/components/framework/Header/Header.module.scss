@@ -1,0 +1,155 @@
+@import 'shared.scss';
+
+/* HEADER */
+.header {
+
+  box-sizing: border-box;
+  height: $headerHeight;
+  border-bottom: 1px solid $colorGrey1;
+
+  /* CHILDREN */
+  // LAYOUT
+  .content {
+    width: $pageWidth;
+    margin: auto;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+  }
+
+  // LEFT
+  .left {
+    display: flex;
+    align-items:center;
+  }
+
+
+  // CHILDREN
+  .logo {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    text-decoration: none;
+  }
+  .image {
+    width: 47px;
+    margin-right: $spaceXs;
+  }
+
+  .title {
+    @include typeM;
+    color: $colorPrimary1;
+    background: $gradientLogo;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .subtitle {
+    @include typeXxs;
+    color: $colorWhite;
+  }
+
+
+  // RIGHT
+  .right {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    align-items:center;
+    justify-content: flex-end;
+
+    z-index:2;
+  }
+  .right > *:nth-child(2) {
+    margin-right: 23px;
+  }
+
+
+  .info {
+    color: $colorWhite;
+    margin-right: 33px;
+  }
+
+
+  // POPOUT
+  .popoutContainer {
+    position: relative;
+    user-select: none;
+  }
+  .popout {
+    position: absolute;
+    right: -20px;
+    top: $headerHeight - 40px;
+    width: 320px;
+    padding: 20px;
+
+    border-radius: $borderRadiusL;
+
+    background-color: $colorGrey1;
+    box-shadow: $boxShadow;
+
+    animation: slideIn $animationDuration ease-out;
+
+    &:focus {
+      outline: none;
+    }
+    // triangle
+    &::after {
+      position: absolute;
+      right: 25px;
+      top: -7px;
+      display: block;
+      content: " ";
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+
+      border-bottom: 10px solid $colorGrey1;
+    }
+
+    .row, .rowText {
+      cursor:pointer;
+      display: flex;
+      margin-bottom: $spaceS;
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+    .rowText {
+      display: block;
+    }
+
+    .metamask {
+      display:block;
+    }
+    .toggle {
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .warning {
+      display: block;
+      color: $colorDanger1;
+      margin-bottom: 8px;
+    }
+
+  }
+
+  .clickOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  /* INTERACTION */
+
+  /* MODIFIERS */
+}

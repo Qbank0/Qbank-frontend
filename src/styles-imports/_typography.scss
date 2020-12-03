@@ -1,0 +1,47 @@
+@mixin typeXl {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+
+  // allow adding svg with padding
+  display: flex;
+  align-items: center;
+  svg, span { display: block }
+  svg { margin-right: 16px }
+
+  // gradient color
+  background: linear-gradient(90.45deg, #FFFFFF 50.61%, rgba(255, 255, 255, 0.7) 101.52%);
+  ;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin typeL {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+@mixin typeM {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+@mixin typeS {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+@mixin typeXs {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+@mixin typeXxs {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
